@@ -1,4 +1,4 @@
-#🌈 Open English Playground
+**#🌈 Open English Playground**
 
 An open-source interactive English learning platform designed for young learners.
 
