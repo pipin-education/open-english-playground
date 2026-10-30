@@ -4,91 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="An interactive English learning playground for young learners.">
+
   <title>Open English Playground</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff8e9;
-      color: #344054;
-      text-align: center;
-      padding: 30px 15px;
-    }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px #00000012;
-    }
-
-    h1 { color: #ed8b36; }
-
-    .subtitle { color: #667085; }
-
-    .choices {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 25px 0;
-    }
-
-    button {
-      border: none;
-      border-radius: 12px;
-      padding: 14px 20px;
-      font-size: 17px;
-      cursor: pointer;
-      background: #e8efff;
-    }
-
-    button:hover { background: #d5e2ff; }
-
-    #feedback {
-      font-size: 20px;
-      font-weight: bold;
-      min-height: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <main class="container">
+
     <h1>🌈 Open English Playground</h1>
+
     <p class="subtitle">
       Learn English through fun activities!
     </p>
 
-    <h2>What color is this?</h2>
+    <section aria-labelledby="quiz-title">
 
-    <div style="font-size: 90px;">🔴</div>
+      <h2 class="question" id="quiz-title">
+        What color is this?
+      </h2>
 
-    <div class="choices">
-      <button onclick="checkAnswer('Blue')">Blue</button>
-      <button onclick="checkAnswer('Red')">Red</button>
-      <button onclick="checkAnswer('Green')">Green</button>
-      <button onclick="checkAnswer('Yellow')">Yellow</button>
-    </div>
+      <div class="color-display" role="img" aria-label="Red circle">
+        🔴
+      </div>
 
-    <p id="feedback">
-      Choose the correct answer!
-    </p>
+      <div class="choices">
+        <button type="button" onclick="checkAnswer('Blue')">
+          Blue
+        </button>
+
+        <button type="button" onclick="checkAnswer('Red')">
+          Red
+        </button>
+
+        <button type="button" onclick="checkAnswer('Green')">
+          Green
+        </button>
+
+        <button type="button" onclick="checkAnswer('Yellow')">
+          Yellow
+        </button>
+      </div>
+
+      <p id="feedback" aria-live="polite">
+        Choose the correct answer!
+      </p>
+
+    </section>
+
   </main>
-
-  <script>
-    function checkAnswer(answer) {
-      const feedback = document.getElementById("feedback");
-
-      if (answer === "Red") {
-        feedback.textContent = "🎉 Excellent! The answer is RED!";
-        feedback.style.color = "green";
-      } else {
-        feedback.textContent = "😊 Try again! You can do it!";
-        feedback.style.color = "orange";
-      }
-    }
-  </script>
 </body>
 </html>
